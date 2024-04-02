@@ -16,7 +16,7 @@
 
     <p style="color: red;">Todos os campos são de preenchimento obrigatório.</p>
 
-    <form action="#" method="post">
+    <form action="#" method="post" id = "cadastroform">
     <fieldset>
         <legend>Grupo 1: Dados Pessoais</legend>
         <label for="nome">Nome:</label>
@@ -35,7 +35,7 @@
         <label for="email">Email:</label>
         <input type="email" id="email" name="email" required><br>
         <label for="telefone">Telefone Celular:</label>
-        <input type="tel" id="telefone" name="telefone" maxlength="9" required><br>
+        <input type="tel" id="telefone" name="telefone" maxlength="11" required><br>
         <label for="website">Website Pessoal:</label>
         <input type="url" id="website" name="website" required><br>
     </fieldset>
@@ -51,10 +51,45 @@
         <label for="estado">Estado:</label>
         <select id="estado" name="estado" required>
         <option value="AC">Acre</option>
+        <option value="AL">Alagoas</option>
+        <option value="AP">Amapá</option>
+        <option value="AM">Amazonas</option>
+        <option value="BA">Bahia</option>
+        <option value="CE">Ceará</option>
+        <option value="ES">Espírito Santo</option>
+        <option value="GO">Goiás</option>
+        <option value="MA">Maranhão</option>
+        <option value="MT">Mato Grosso</option>
+        <option value="MS">Mato Grosso do Sul</option>
+        <option value="MG">Minas Gerais</option>
+        <option value="PA">Pará</option>
+        <option value="PB">Paraíba</option>
+        <option value="PR">Paraná</option>
+        <option value="PE">Pernambuco</option>
+        <option value="PI">Piauí</option>
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="RN">Rio Grande do Norte</option>
+        <option value="RS">Rio Grande do Sul</option>
+        <option value="RO">Rondônia</option>
+        <option value="RR">Roraima</option>
+        <option value="SC">Santa Catarina</option>
+        <option value="SP">São Paulo</option>
+        <option value="SE">Sergipe</option>
+        <option value="TO">Tocantins</option>
+        <option value="DF">Distrito Federal</option>
         </select><br>
     </fieldset>
 
     <button type="submit">Cadastrar</button>
+
+    <script>
+        document.getElementById('cadastroform').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Cliente Cadastrado');
+            document.getElementById('cadastroform').reset();
+        });
+    </script>
+
     <button type="reset">Limpar</button>
     </form>
 
