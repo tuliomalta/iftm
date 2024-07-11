@@ -13,3 +13,12 @@ public class Main {
         }
     }
 }
+
+public class Ruan {
+    public  static void main {
+        System.out.println("Hello and welcome!");
+    }
+
+    
+
+}
