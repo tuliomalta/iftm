@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.opcaoMenu {
+    color: white;
+    border: 3px solid black;
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center 10px;
+    padding-top: 50px;
+    width: 100px;
+    height: 35px;
+    text-align: center;
+    list-style-type: none;
+    font-family: "Oswald";
+    text-decoration: none;
+    display: inline-block;
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('Fonts/Oswald-VariableFont_wght.ttf');
+}
+
+.opcaoMenuFace {
+    color: white;
+    background-image: url("imagens/faceBlack.png");
+}
+
+.opcaoMenuFace:hover {
+    color: #3B5998;
+    background-image: url("imagens/face.png");
+    border-bottom: 3px solid #3B5998;
+
+}
+
+.opcaoMenuInsta {
+    color: white;
+    background-image: url("imagens/instaBlack.png");
+}
+
+.opcaoMenuInsta:hover {
+    color: #B91A7E;
+    background-image: url("imagens/insta.png");
+    border-bottom: 3px solid #B91A7E;
+}
+
+.opcaoMenuMaps {
+    color: white;
+    background-image: url("imagens/mapsBlack.png");
+}
+
+.opcaoMenuMaps:hover {
+    color: #1081E0;
+    background-image: url("imagens/maps.png");
+    border-bottom: 3px solid #1081E0;
+}
+
+.opcaoMenuTwitter {
+    color: white;
+    background-image: url("imagens/twitterBlack.png");
+}
+
+.opcaoMenuTwitter:hover {
+    color: #55ACEE;
+    background-image: url("imagens/twitter.png");
+    border-bottom: 3px solid #55ACEE;
+}
+
+.opcaoMenuYoutube {
+    color: white;
+    background-image: url("imagens/youtubeBlack.png");
+}
+
+.opcaoMenuYoutube:hover {
+    color: #F61C0D;
+    background-image: url("imagens/youtube.png");
+    border-bottom: 3px solid #F61C0D;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: black;    
+    text-align: center;
+}
+
+nav ul li {
+    margin: 0 8px;
+    display: inline-block;
+}
+
