@@ -8,30 +8,30 @@ body {
     background-color: black;
     font-family: Arial;
     display: flex;
-    flex-direction: column; /* Para garantir que os elementos do body fiquem em coluna */
-    min-height: 100vh;
+    flex-direction: column; 
 }
 
 header {
-    background-color: blue;
+    background-color: rgb(19, 19, 104);
     color: white;
-    padding: 10px;
+    padding: 15px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Garante que o header ocupe toda a largura */
-    position: fixed; /* Fixa o header no topo da página */
-    top: 0;
-    z-index: 1000; /* Mantém o header acima de outros elementos */
+    width: 100%; 
+    margin: 0;
 }  
 
-header img {
-    width: 100px; /* Ajuste o tamanho conforme necessário */
-}
+
+/* main img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; 
+} */
 
 header nav {
     display: flex;
-    justify-content: center; /* Centraliza os itens de navegação */
+    justify-content: center; 
     flex-grow: 1;
 }
 
@@ -43,7 +43,8 @@ header nav ul {
 }
 
 header nav ul li {
-    margin: 0 15px; /* Espaço entre os itens de navegação */
+    margin: 0 30px; 
+    display: inline-block;
 }
 
 header nav ul li a {
@@ -53,12 +54,12 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    color: orangered; /* Cor do texto ao passar o mouse */
+    text-decoration: underline; 
 }
 
 main {
-    margin-top: 60px; /* Espaço suficiente para que o conteúdo fique abaixo do header */
-    flex-grow: 1; /* Faz o conteúdo principal ocupar o restante do espaço */
+    margin-top: 60px; 
+    flex-grow: 1; 
 }
 
 main section {
