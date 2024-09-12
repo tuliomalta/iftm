@@ -52,6 +52,7 @@ header nav ul li a:hover {
 
 main {
     padding: 50px;
+    flex: 1;
 }
 
 .container > div {
@@ -88,13 +89,15 @@ main {
     border-radius: 8px;
 }
 
-.historia-detalhada p {
-    text-align: justify, center;
+.container {
+    min-height: calc(100vh - 20px);
 }
 
+
 footer {
-    background-color: #222;
-    padding: 20px;
+    height: 50px;
+    background-color: black;
+    color: white;
     text-align: center;
-    font-size: 14px;
+    line-height: 50px;
 }
