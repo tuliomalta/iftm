@@ -4,6 +4,8 @@
     box-sizing: border-box;
 }
 
+@media 
+
 body {
     background-image: url('img/background-darkness.jpg');
     background-size: cover;
