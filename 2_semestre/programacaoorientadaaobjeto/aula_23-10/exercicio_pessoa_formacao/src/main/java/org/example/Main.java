@@ -87,12 +87,6 @@ public class Main {
                     System.out.println(f.exibe());
                     break;
                 case 3:
-<<<<<<< HEAD
-                    Pessoa q = lePessoa();
-                    System.out.println(q.exibe());
-                    Formacao g = leformacao();
-                    System.out.println(g.exibe());
-=======
                     if (p != null) {
                         System.out.println(p.exibe());
                         if (f != null) {
@@ -104,7 +98,6 @@ public class Main {
                         System.out.println("A pessoa não foi cadastrada.");
                     }
                     System.out.println(p.exibe());
->>>>>>> 713dd898dba0b46dee1af3fd3448d37768d158df
                     break;
                 case 4:
                     System.out.print("Digite a nova idade: ");
