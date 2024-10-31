@@ -43,21 +43,21 @@ public class App {
         System.out.println("---------------------------------");
         if (jogador.posicao.equals("Ataque")) {
             if (idade < 35) {
-                System.out.println("Faltam " + diferencaIdade(idade,35) + " anos para o jogador " + jogador.nome + " se aposentar.");
+                System.out.println("Faltam " + diferencaIdade(idade,35) + " anos para o jogador " + jogador.getNome() + " se aposentar.");
             } else {
-                System.out.println("O jogador " + jogador.nome + " já está aposentado.");
+                System.out.println("O jogador " + jogador.getNome() + " já está aposentado.");
             }
         } else if (jogador.posicao.equals("Meio-campo")) {
             if (idade < 38) {
-                System.out.println("Faltam " + diferencaIdade(idade, 38) + " anos para o jogador " + jogador.nome + " se aposentar.");
+                System.out.println("Faltam " + diferencaIdade(idade, 38) + " anos para o jogador " + jogador.getNome() + " se aposentar.");
             } else {
-                System.out.println("O jogador " + jogador.nome + " já está aposentado.");
+                System.out.println("O jogador " + jogador.getNome() + " já está aposentado.");
             }
         } else {
             if (idade < 40) {
-                System.out.println("Faltam " + diferencaIdade(idade, 40) + " anos para o jogador " + jogador.nome + " se aposentar.");
+                System.out.println("Faltam " + diferencaIdade(idade, 40) + " anos para o jogador " + jogador.getNome() + " se aposentar.");
             } else {
-                System.out.println("O jogador " + jogador.nome + " já está aposentado.");
+                System.out.println("O jogador " + jogador.getNome() + " já está aposentado.");
             }
         }
     }

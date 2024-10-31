@@ -3,7 +3,7 @@ package org.example;
 import java.time.LocalDateTime;
 
 public class JogadorDeFutebol {
-    public String nome;
+    private String nome;
     public String posicao;
     public int anoDeNascimento;
     public String nacionalidade;
