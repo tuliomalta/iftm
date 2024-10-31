@@ -1,5 +1,7 @@
 package org.example;
 
+import java.time.LocalDateTime;
+
 public class JogadorDeFutebol {
     public String nome;
     public String posicao;
@@ -16,6 +18,16 @@ public class JogadorDeFutebol {
         this.nacionalidade = nacionalidade;
         this.altura = altura;
         this.peso = peso;
+    }
+
+    public static int calculaIdade(int anoDeNascimento) {
+        int anoAtual = LocalDateTime.now().getYear();
+        return  anoAtual - anoDeNascimento;
+    }
+
+    public String exibe() {
+        return "Cadastro Jogador \nNome: " + nome + "\nPosição: " + posicao + "\nAno de Nascimento: " +
+                anoDeNascimento + "\nNacionalidade: " + nacionalidade + "\nAltura: " + altura + "\nPeso: " + peso;
     }
 
     public String getNome() {

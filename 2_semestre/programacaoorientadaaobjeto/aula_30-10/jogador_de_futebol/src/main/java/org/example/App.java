@@ -1,6 +1,5 @@
 package org.example;
 
-import java.time.LocalDateTime;
 import java.util.Scanner;
 
 public class App {
@@ -9,41 +8,61 @@ public class App {
 
     public static void main(String[] args) {
 
-        System.out.printf("Hello and welcome!");
+        JogadorDeFutebol jogador = leDados();
+        int idade = JogadorDeFutebol.calculaIdade(jogador.anoDeNascimento);
+        System.out.println(jogador.exibe());
+        tempoAposentadoria(jogador, idade);
 
-        for (int i = 1; i <= 5; i++) {
-
-            System.out.println("i = " + i);
-        }
     }
 
     public static JogadorDeFutebol leDados() {
 
-        System.out.println("Digite o nome do jogador: ");
+        System.out.print("Digite o nome do jogador: ");
         String nome = scanner.next();
 
-        System.out.println("Digite a posição do jogador: ");
+        System.out.print("\nDigite a posição do jogador: ");
         String posicao = scanner.next();
 
-        System.out.println("Digite o ano de nascimento do jogador: ");
+        System.out.print("\nDigite o ano de nascimento do jogador: ");
         int anoDeNascimento = scanner.nextInt();
 
-        System.out.println("Digite a nacionalidade do jogador: ");
+        System.out.print("\nDigite a nacionalidade do jogador: ");
         String nacionalidade = scanner.next();
 
-        System.out.println("Digite a altura do jogador: ");
+        System.out.print("\nDigite a altura do jogador: ");
         double altura = scanner.nextDouble();
 
-        System.out.println("Digite o peso do jogador: ");
+        System.out.print("\nDigite o peso do jogador: ");
         double peso = scanner.nextDouble();
 
         JogadorDeFutebol jogador = new JogadorDeFutebol(nome, posicao, anoDeNascimento, nacionalidade, altura, peso);
         return jogador;
     }
 
-    public static int calculaIdade(int anoDeNascimento) {
-        int anoAtual = LocalDateTime.now().getYear();
-        return  anoAtual - anoDeNascimento;
+    public static void tempoAposentadoria(JogadorDeFutebol jogador, int idade) {
+        System.out.println("---------------------------------");
+        if (jogador.posicao.equals("Ataque")) {
+            if (idade < 35) {
+                System.out.println("Faltam " + diferencaIdade(idade,35) + " anos para o jogador " + jogador.nome + " se aposentar.");
+            } else {
+                System.out.println("O jogador " + jogador.nome + " já está aposentado.");
+            }
+        } else if (jogador.posicao.equals("Meio-campo")) {
+            if (idade < 38) {
+                System.out.println("Faltam " + diferencaIdade(idade, 38) + " anos para o jogador " + jogador.nome + " se aposentar.");
+            } else {
+                System.out.println("O jogador " + jogador.nome + " já está aposentado.");
+            }
+        } else {
+            if (idade < 40) {
+                System.out.println("Faltam " + diferencaIdade(idade, 40) + " anos para o jogador " + jogador.nome + " se aposentar.");
+            } else {
+                System.out.println("O jogador " + jogador.nome + " já está aposentado.");
+            }
+        }
+    }
 
+    public static int diferencaIdade(int idade, int idadeAposentadoria) {
+        return idadeAposentadoria - idade;
     }
 }
