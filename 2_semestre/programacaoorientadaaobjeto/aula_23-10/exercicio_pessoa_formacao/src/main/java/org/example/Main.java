@@ -1,6 +1,5 @@
 package org.example;
 
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 
@@ -69,7 +68,10 @@ public class Main {
                     System.out.println(f.exibe());
                     break;
                 case 3:
-                    System.out.println(p.exibe());
+                    Pessoa q = lePessoa();
+                    System.out.println(q.exibe());
+                    Formacao g = leformacao();
+                    System.out.println(g.exibe());
                     break;
                 case 4:
                     System.out.println("Atualizar idade");
