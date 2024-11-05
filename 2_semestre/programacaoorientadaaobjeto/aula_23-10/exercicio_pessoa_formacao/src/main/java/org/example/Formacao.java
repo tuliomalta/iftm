@@ -13,8 +13,16 @@ public class Formacao {
         this.ano = ano;
     }
 
+    public String conteudoAmigavel() {
+        if (concluido) {
+            return "Concluído";
+        } else {
+            return "Não concluído";
+        }
+    }
+
     public String exibe() {
-        return "CADASTRO \nNivel: " + nivel + "\nConcluído: " + concluido + "\nInstituição: " + instituicao + "\nAno: " + ano;
+        return "CADASTRO \nNivel: " + nivel + "\nConcluído: " + conteudoAmigavel() + "\nInstituição: " + instituicao + "\nAno: " + ano;
     }
 
     public String getNivel() {
