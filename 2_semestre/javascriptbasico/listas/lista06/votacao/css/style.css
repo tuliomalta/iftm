@@ -1,0 +1,54 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.voting-panel {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.candidate {
+    width: 150px;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    transition: background-color 0.3s, transform 0.3s;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.candidate img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.candidate:hover {
+    background-color: lightblue;
+    transform: scale(1.05);
+}
+
+.highest {
+    background-color: lightgreen;
+}
+
+.tie {
+    background-color: yellow;
+}
+
+.lowest {
+    background-color: lightcoral;
+}
