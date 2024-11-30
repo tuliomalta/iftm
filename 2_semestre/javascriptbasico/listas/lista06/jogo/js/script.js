@@ -1,29 +1,36 @@
 var boy = document.getElementById("boy");
 var textBoy = document.getElementById("textBoy");
 
-// Evento ao passar o mouse
-boy.addEventListener("mouseenter", function() {
+boy.addEventListener("mouseenter", function () {
     boy.src = "img/assustado.png";
     textBoy.innerHTML = "O que você quer?";
 });
 
-// Evento ao tirar o mouse
-boy.addEventListener("mouseout", function() {
+boy.addEventListener("mouseout", function () {
     boy.src = "img/pensativo.png";
     textBoy.innerHTML = "zzzzzzzz!";
-    boy.classList.remove("nervous", "happy"); // Remove classes de animação
+    boy.classList.remove("nervous", "happy");
 });
 
-// Evento ao clicar
-boy.addEventListener("click", function() {
-    var userName = prompt("Qual é o seu nome?");
-    if (userName === null || userName.trim() === "") {
+boy.addEventListener("click", function () {
+    setTimeout(() => {
+        var userName = prompt("Qual é o seu nome?");
+        handleUserName(userName);
+    }, 10);
+});
+
+function handleUserName(userName) {
+    userName = userName && userName.trim();
+
+    if (!userName) {
         boy.src = "img/nervoso.png";
         textBoy.innerHTML = "Não me faça perder o meu tempo!";
-        boy.classList.add("nervous"); // Adiciona animação de tremor
+        boy.classList.add("nervous");
+        setTimeout(() => boy.classList.remove("nervous"), 300);
     } else {
         boy.src = "img/alegre.png";
         textBoy.innerHTML = `${userName}, seja bem-vindo!`;
-        boy.classList.add("happy"); // Adiciona animação de balanço
+        boy.classList.add("happy");
+        setTimeout(() => boy.classList.remove("happy"), 1000);
     }
-});
+}

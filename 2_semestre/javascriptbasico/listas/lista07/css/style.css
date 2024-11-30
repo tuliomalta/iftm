@@ -1,0 +1,252 @@
+    body, h1, p, form, label, input {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #1e3c72, #2a5298);
+        color: #fff;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .boxBoy {
+        width: 180px;
+        text-align: center;
+        margin: auto;
+    }
+    
+    img {
+        width: 150px;
+        height: auto;
+        cursor: pointer;
+    }
+    
+    @keyframes swing {
+        0%, 100% { transform: rotate(0); }
+        25% { transform: rotate(-10deg); }
+        50% { transform: rotate(10deg); }
+        75% { transform: rotate(-10deg); }
+    }
+    
+    .nervous {
+        animation: swing 0.15s ease-in-out 2;
+    }
+    
+    @keyframes shake {
+        0%, 100% { transform: translateX(0); }
+        20% { transform: translateX(-30px); }
+        40% { transform: translateX(30px); }
+        60% { transform: translateX(-30px); }
+        80% { transform: translateX(30px); }
+    }
+    
+    .happy {
+        animation: shake 1s ease-in-out 2;
+    }
+
+    .container {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .header-image {
+        width: 300px;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+        font-size: 2.5rem;
+        text-align: center;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    form {
+        background: rgba(255, 255, 255, 0.1);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.8);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin-top: 10px;
+    }
+
+    label {
+        font-size: 1rem;
+        font-weight: bold;
+        align-self: flex-start;
+    }
+
+    input[type="text"], 
+    input[type="password"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+        font-size: 1rem;
+        width: 100%;
+    }
+
+    input[type="button"], 
+    input[type="reset"] {
+        padding: 10px;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+
+    input[type="button"] {
+        background: #4CAF50;
+        color: #fff;
+    }
+
+    input[type="reset"] {
+        background: #f44336;
+        color: #fff;
+    }
+
+    input[type="button"]:hover {
+        background: #45a049;
+    }
+
+    input[type="reset"]:hover {
+        background: #e53935;
+    }
+
+    a {
+        color: #FFD700;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: #FFC107;
+    }
+
+    form input:focus {
+        background: rgba(255, 255, 255, 0.2);
+        transition: background 0.3s ease;
+    }
+
+    form input::placeholder {
+        color: rgba(255, 255, 255, 0.7);
+    }
+
+    .form-link {
+        margin-top: 15px;
+    }
+
+    .form-link a {
+        font-size: 1rem;
+        font-weight: bold;
+        color: #FFD700;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .form-link a:hover {
+        color: #FFC107;
+    }
+
+
+.exit-button-container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+#btnExit {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    background: #FFA500; 
+    color: #fff;
+    width: 100%;
+    max-width: 300px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    position: absolute;
+    bottom: 25px;
+}
+
+#btnExit:hover {
+    background: #FF8C00;
+}
+
+/* Estilo do menu de confirmação de saída */
+.exit-menu {
+    display: none;
+    background: rgb(255, 255, 255);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    width: 300px;
+    text-align: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.exit-buttons {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.exit-buttons input[type="button"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 45%;
+}
+
+#btnYes {
+    background: #4CAF50; /* Verde */
+    color: #fff;
+}
+
+#btnNo {
+    background: #f44336; /* Vermelho */
+    color: #fff;
+}
+
+#btnYes:hover {
+    background: #45a049;
+}
+
+#btnNo:hover {
+    background: #e53935;
+}
+
+body#jogo {
+    background: #fff;
+    color: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

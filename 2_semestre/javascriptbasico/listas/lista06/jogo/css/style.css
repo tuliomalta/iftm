@@ -30,7 +30,6 @@ img {
     animation: swing 0.15s ease-in-out 2;
 }
 
-
 @keyframes shake {
     0%, 100% { transform: translateX(0); }
     20% { transform: translateX(-30px); }
