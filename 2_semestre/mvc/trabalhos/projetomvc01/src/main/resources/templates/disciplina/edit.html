@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Editar Disciplina</title>
+</head>
+<body>
+    <h1>Editar Disciplina</h1>
+    <form th:action="@{/disciplina/edit/{id}(id=${disciplina.id})}" th:object="${disciplina}" method="post">
+        <label for="nomeDisciplina">Nome:</label>
+        <input type="text" id="nomeDisciplina" th:field="*{nomeDisciplina}" /><br/>
+        <label for="siglaDisciplina">Sigla:</label>
+        <input type="text" id="siglaDisciplina" th:field="*{siglaDisciplina}" /><br/>
+        <label for="cargaHoraria">Carga Horária:</label>
+        <input type="text" id="cargaHoraria" th:field="*{cargaHoraria}" /><br/>
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" th:field="*{curso.nomeCurso}" /><br/>
+        <label for="aluno">Aluno:</label>
+        <input type="text" id="aluno" th:field="*{aluno.nome}" /><br/>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="/disciplina/list">Voltar</a>
+</body>
+</html>

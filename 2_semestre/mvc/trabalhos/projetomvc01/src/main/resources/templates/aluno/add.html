@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Adicionar Aluno</title>
+</head>
+<body>
+    <h1>Adicionar Aluno</h1>
+    <form th:action="@{/aluno/add}" th:object="${aluno}" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" th:field="*{nome}" /><br/>
+        <label for="cpf">CPF:</label>
+        <input type="text" id="cpf" th:field="*{cpf}" /><br/>
+        <label for="sexo">Sexo:</label>
+        <input type="text" id="sexo" th:field="*{sexo}" /><br/>
+        <label for="curso">Curso:</label>
+        <input type="text" id="curso" th:field="*{curso.nomeCurso}" /><br/>
+        <button type="submit">Salvar</button>
+    </form>
+    <a href="/aluno/list">Voltar</a>
+</body>
+</html>
