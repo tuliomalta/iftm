@@ -21,37 +21,26 @@ public class CursoController {
         this.cursoRepository = cursoRepository;
     }
 
-    @GetMapping("/list")
+    @GetMapping("/crud")
     public String listCursos(Model model) {
         List<Curso> cursos = cursoRepository.findAll();
         model.addAttribute("cursos", cursos);
-        return "curso/list";
-    }
-
-    @GetMapping("/{id}")
-    public String getCursoById(@PathVariable Long id, Model model) {
-        Optional<Curso> curso = cursoRepository.findById(id);
-        model.addAttribute("curso", curso.orElse(null));
-        return "curso/view";
-    }
-
-    @GetMapping("/add")
-    public String addCursoForm(Model model) {
         model.addAttribute("curso", new Curso());
-        return "curso/add";
-    }
-
-    @PostMapping("/add")
-    public String addCurso(@ModelAttribute Curso curso) {
-        cursoRepository.save(curso);
-        return "redirect:/curso/list";
+        return "curso/crud";
     }
 
     @GetMapping("/edit/{id}")
     public String editCursoForm(@PathVariable Long id, Model model) {
         Optional<Curso> curso = cursoRepository.findById(id);
-        model.addAttribute("curso", curso.orElse(null));
-        return "curso/edit";
+        model.addAttribute("curso", curso.orElse(new Curso()));
+        model.addAttribute("cursos", cursoRepository.findAll());
+        return "curso/crud";
+    }
+
+    @PostMapping("/add")
+    public String addCurso(@ModelAttribute Curso curso) {
+        cursoRepository.save(curso);
+        return "redirect:/curso/crud";
     }
 
     @PostMapping("/edit/{id}")
@@ -60,15 +49,13 @@ public class CursoController {
         curso.setNomeCurso(cursoDetails.getNomeCurso());
         curso.setSiglaCurso(cursoDetails.getSiglaCurso());
         curso.setTipoCurso(cursoDetails.getTipoCurso());
-        curso.setAlunos(cursoDetails.getAlunos());
-        curso.setDisciplinas(cursoDetails.getDisciplinas());
         cursoRepository.save(curso);
-        return "redirect:/curso/list";
+        return "redirect:/curso/crud";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteCurso(@PathVariable Long id) {
         cursoRepository.deleteById(id);
-        return "redirect:/curso/list";
+        return "redirect:/curso/crud";
     }
 }

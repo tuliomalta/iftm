@@ -21,37 +21,26 @@ public class DisciplinaController {
         this.disciplinaRepository = disciplinaRepository;
     }
 
-    @GetMapping("/list")
+    @GetMapping("/crud")
     public String listDisciplinas(Model model) {
         List<Disciplina> disciplinas = disciplinaRepository.findAll();
         model.addAttribute("disciplinas", disciplinas);
-        return "disciplina/list";
-    }
-
-    @GetMapping("/{id}")
-    public String getDisciplinaById(@PathVariable Long id, Model model) {
-        Optional<Disciplina> disciplina = disciplinaRepository.findById(id);
-        model.addAttribute("disciplina", disciplina.orElse(null));
-        return "disciplina/view";
-    }
-
-    @GetMapping("/add")
-    public String addDisciplinaForm(Model model) {
         model.addAttribute("disciplina", new Disciplina());
-        return "disciplina/add";
-    }
-
-    @PostMapping("/add")
-    public String addDisciplina(@ModelAttribute Disciplina disciplina) {
-        disciplinaRepository.save(disciplina);
-        return "redirect:/disciplina/list";
+        return "disciplina/crud";
     }
 
     @GetMapping("/edit/{id}")
     public String editDisciplinaForm(@PathVariable Long id, Model model) {
         Optional<Disciplina> disciplina = disciplinaRepository.findById(id);
-        model.addAttribute("disciplina", disciplina.orElse(null));
-        return "disciplina/edit";
+        model.addAttribute("disciplina", disciplina.orElse(new Disciplina()));
+        model.addAttribute("disciplinas", disciplinaRepository.findAll());
+        return "disciplina/crud";
+    }
+
+    @PostMapping("/add")
+    public String addDisciplina(@ModelAttribute Disciplina disciplina) {
+        disciplinaRepository.save(disciplina);
+        return "redirect:/disciplina/crud";
     }
 
     @PostMapping("/edit/{id}")
@@ -60,15 +49,13 @@ public class DisciplinaController {
         disciplina.setNomeDisciplina(disciplinaDetails.getNomeDisciplina());
         disciplina.setSiglaDisciplina(disciplinaDetails.getSiglaDisciplina());
         disciplina.setCargaHoraria(disciplinaDetails.getCargaHoraria());
-        disciplina.setCurso(disciplinaDetails.getCurso());
-        disciplina.setAluno(disciplinaDetails.getAluno());
         disciplinaRepository.save(disciplina);
-        return "redirect:/disciplina/list";
+        return "redirect:/disciplina/crud";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteDisciplina(@PathVariable Long id) {
         disciplinaRepository.deleteById(id);
-        return "redirect:/disciplina/list";
+        return "redirect:/disciplina/crud";
     }
 }

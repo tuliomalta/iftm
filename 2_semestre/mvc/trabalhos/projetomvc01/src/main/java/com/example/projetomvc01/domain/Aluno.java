@@ -1,8 +1,6 @@
-// Aluno.java
 package com.example.projetomvc01.domain;
 
 import jakarta.persistence.*;
-
 import java.util.List;
 
 @Entity
@@ -14,18 +12,13 @@ public class Aluno {
     private String cpf;
     private char sexo;
 
-    @OneToOne
-    private Curso curso;
+    // Removendo a relação com Curso e Disciplina
 
-    @OneToMany(mappedBy = "aluno")
-    private List<Disciplina> disciplinas;
-
-    public Aluno(Long id, String nome, String cpf, char sexo, Curso curso) {
+    public Aluno(Long id, String nome, String cpf, char sexo) {
         this.id = id;
         this.nome = nome;
         this.cpf = cpf;
         this.sexo = sexo;
-        this.curso = curso;
     }
 
     public Aluno() {
@@ -61,21 +54,5 @@ public class Aluno {
 
     public void setSexo(char sexo) {
         this.sexo = sexo;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
     }
 }

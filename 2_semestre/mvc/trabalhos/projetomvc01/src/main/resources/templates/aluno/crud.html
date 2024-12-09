@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gerenciar Alunos</title>
+</head>
+<body>
+    <h1>Gerenciar Alunos</h1>
+
+    <!-- Formulário para Adicionar/Editar Aluno -->
+    <h2 th:if="${aluno.id == null}">Adicionar Aluno</h2>
+    <h2 th:unless="${aluno.id == null}">Editar Aluno</h2>
+    <form th:action="@{/aluno/add}" th:if="${aluno.id == null}" th:object="${aluno}" method="post">
+        <label for="nomeAdd">Nome:</label>
+        <input type="text" id="nomeAdd" th:field="*{nome}" /><br/>
+        <label for="cpfAdd">CPF:</label>
+        <input type="text" id="cpfAdd" th:field="*{cpf}" /><br/>
+        <label for="sexoAdd">Sexo:</label>
+        <input type="text" id="sexoAdd" th:field="*{sexo}" /><br/>
+        <button type="submit">Adicionar</button>
+    </form>
+    <form th:action="@{/aluno/edit/{id}(id=${aluno.id})}" th:unless="${aluno.id == null}" th:object="${aluno}" method="post">
+        <label for="nomeEdit">Nome:</label>
+        <input type="text" id="nomeEdit" th:field="*{nome}" /><br/>
+        <label for="cpfEdit">CPF:</label>
+        <input type="text" id="cpfEdit" th:field="*{cpf}" /><br/>
+        <label for="sexoEdit">Sexo:</label>
+        <input type="text" id="sexoEdit" th:field="*{sexo}" /><br/>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <!-- Tabela de Alunos -->
+    <h2>Lista de Alunos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Sexo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="aluno : ${alunos}">
+                <td th:text="${aluno.id}"></td>
+                <td th:text="${aluno.nome}"></td>
+                <td th:text="${aluno.cpf}"></td>
+                <td th:text="${aluno.sexo}"></td>
+                <td>
+                    <a th:href="@{'/aluno/edit/' + ${aluno.id}}">Editar</a>
+                    <a th:href="@{'/aluno/delete/' + ${aluno.id}}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

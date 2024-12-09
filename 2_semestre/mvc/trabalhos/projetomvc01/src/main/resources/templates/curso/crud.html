@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gerenciar Cursos</title>
+</head>
+<body>
+    <h1>Gerenciar Cursos</h1>
+
+    <!-- Formulário para Adicionar/Editar Curso -->
+    <h2 th:if="${curso.id == null}">Adicionar Curso</h2>
+    <h2 th:unless="${curso.id == null}">Editar Curso</h2>
+    <form th:action="@{/curso/add}" th:if="${curso.id == null}" th:object="${curso}" method="post">
+        <label for="nomeCursoAdd">Nome:</label>
+        <input type="text" id="nomeCursoAdd" th:field="*{nomeCurso}" /><br/>
+        <label for="siglaCursoAdd">Sigla:</label>
+        <input type="text" id="siglaCursoAdd" th:field="*{siglaCurso}" /><br/>
+        <label for="tipoCursoAdd">Tipo:</label>
+        <input type="text" id="tipoCursoAdd" th:field="*{tipoCurso}" /><br/>
+        <button type="submit">Adicionar</button>
+    </form>
+    <form th:action="@{/curso/edit/{id}(id=${curso.id})}" th:unless="${curso.id == null}" th:object="${curso}" method="post">
+        <label for="nomeCursoEdit">Nome:</label>
+        <input type="text" id="nomeCursoEdit" th:field="*{nomeCurso}" /><br/>
+        <label for="siglaCursoEdit">Sigla:</label>
+        <input type="text" id="siglaCursoEdit" th:field="*{siglaCurso}" /><br/>
+        <label for="tipoCursoEdit">Tipo:</label>
+        <input type="text" id="tipoCursoEdit" th:field="*{tipoCurso}" /><br/>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <!-- Tabela de Cursos -->
+    <h2>Lista de Cursos</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sigla</th>
+                <th>Tipo</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="curso : ${cursos}">
+                <td th:text="${curso.id}"></td>
+                <td th:text="${curso.nomeCurso}"></td>
+                <td th:text="${curso.siglaCurso}"></td>
+                <td th:text="${curso.tipoCurso}"></td>
+                <td>
+                    <a th:href="@{'/curso/edit/' + ${curso.id}}">Editar</a>
+                    <a th:href="@{'/curso/delete/' + ${curso.id}}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

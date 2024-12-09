@@ -1,11 +1,9 @@
-// Disciplina.java
 package com.example.projetomvc01.domain;
 
 import jakarta.persistence.*;
 
 @Entity
 public class Disciplina {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -13,17 +11,13 @@ public class Disciplina {
     private String siglaDisciplina;
     private String cargaHoraria;
 
-    @ManyToOne
-    private Curso curso;
+    // Removendo a relação com Curso e Aluno
 
-    @ManyToOne
-    private Aluno aluno;
-
-    public Disciplina(Long id, String nomeDisciplina, String siglaDisciplina, Curso curso) {
+    public Disciplina(Long id, String nomeDisciplina, String siglaDisciplina, String cargaHoraria) {
         this.id = id;
         this.nomeDisciplina = nomeDisciplina;
         this.siglaDisciplina = siglaDisciplina;
-        this.curso = curso;
+        this.cargaHoraria = cargaHoraria;
     }
 
     public Disciplina() {
@@ -59,21 +53,5 @@ public class Disciplina {
 
     public void setCargaHoraria(String cargaHoraria) {
         this.cargaHoraria = cargaHoraria;
-    }
-
-    public Curso getCurso() {
-        return curso;
-    }
-
-    public void setCurso(Curso curso) {
-        this.curso = curso;
-    }
-
-    public Aluno getAluno() {
-        return aluno;
-    }
-
-    public void setAluno(Aluno aluno) {
-        this.aluno = aluno;
     }
 }

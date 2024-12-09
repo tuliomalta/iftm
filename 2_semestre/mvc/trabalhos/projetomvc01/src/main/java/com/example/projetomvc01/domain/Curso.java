@@ -1,13 +1,9 @@
-// Curso.java
 package com.example.projetomvc01.domain;
 
 import jakarta.persistence.*;
 
-import java.util.List;
-
 @Entity
 public class Curso {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -15,11 +11,7 @@ public class Curso {
     private String siglaCurso;
     private String tipoCurso;
 
-    @OneToMany(mappedBy = "curso")
-    private List<Aluno> alunos;
-
-    @OneToMany(mappedBy = "curso")
-    private List<Disciplina> disciplinas;
+    // Removendo a relação com Aluno e Disciplina
 
     public Curso(Long id, String nomeCurso, String siglaCurso, String tipoCurso) {
         this.id = id;
@@ -61,21 +53,5 @@ public class Curso {
 
     public void setTipoCurso(String tipoCurso) {
         this.tipoCurso = tipoCurso;
-    }
-
-    public List<Aluno> getAlunos() {
-        return alunos;
-    }
-
-    public void setAlunos(List<Aluno> alunos) {
-        this.alunos = alunos;
-    }
-
-    public List<Disciplina> getDisciplinas() {
-        return disciplinas;
-    }
-
-    public void setDisciplinas(List<Disciplina> disciplinas) {
-        this.disciplinas = disciplinas;
     }
 }

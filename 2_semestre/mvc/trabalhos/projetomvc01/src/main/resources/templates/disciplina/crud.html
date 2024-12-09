@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Gerenciar Disciplinas</title>
+</head>
+<body>
+    <h1>Gerenciar Disciplinas</h1>
+
+    <!-- Formulário para Adicionar/Editar Disciplina -->
+    <h2 th:if="${disciplina.id == null}">Adicionar Disciplina</h2>
+    <h2 th:unless="${disciplina.id == null}">Editar Disciplina</h2>
+    <form th:action="@{/disciplina/add}" th:if="${disciplina.id == null}" th:object="${disciplina}" method="post">
+        <label for="nomeDisciplinaAdd">Nome:</label>
+        <input type="text" id="nomeDisciplinaAdd" th:field="*{nomeDisciplina}" /><br/>
+        <label for="siglaDisciplinaAdd">Sigla:</label>
+        <input type="text" id="siglaDisciplinaAdd" th:field="*{siglaDisciplina}" /><br/>
+        <label for="cargaHorariaAdd">Carga Horária:</label>
+        <input type="text" id="cargaHorariaAdd" th:field="*{cargaHoraria}" /><br/>
+        <button type="submit">Adicionar</button>
+    </form>
+    <form th:action="@{/disciplina/edit/{id}(id=${disciplina.id})}" th:unless="${disciplina.id == null}" th:object="${disciplina}" method="post">
+        <label for="nomeDisciplinaEdit">Nome:</label>
+        <input type="text" id="nomeDisciplinaEdit" th:field="*{nomeDisciplina}" /><br/>
+        <label for="siglaDisciplinaEdit">Sigla:</label>
+        <input type="text" id="siglaDisciplinaEdit" th:field="*{siglaDisciplina}" /><br/>
+        <label for="cargaHorariaEdit">Carga Horária:</label>
+        <input type="text" id="cargaHorariaEdit" th:field="*{cargaHoraria}" /><br/>
+        <button type="submit">Salvar</button>
+    </form>
+
+    <!-- Tabela de Disciplinas -->
+    <h2>Lista de Disciplinas</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Sigla</th>
+                <th>Carga Horária</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="disciplina : ${disciplinas}">
+                <td th:text="${disciplina.id}"></td>
+                <td th:text="${disciplina.nomeDisciplina}"></td>
+                <td th:text="${disciplina.siglaDisciplina}"></td>
+                <td th:text="${disciplina.cargaHoraria}"></td>
+                <td>
+                    <a th:href="@{'/disciplina/edit/' + ${disciplina.id}}">Editar</a>
+                    <a th:href="@{'/disciplina/delete/' + ${disciplina.id}}">Deletar</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

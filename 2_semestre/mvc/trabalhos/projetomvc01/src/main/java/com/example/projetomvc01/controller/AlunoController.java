@@ -21,37 +21,26 @@ public class AlunoController {
         this.alunoRepository = alunoRepository;
     }
 
-    @GetMapping("/list")
+    @GetMapping("/crud")
     public String listAlunos(Model model) {
         List<Aluno> alunos = alunoRepository.findAll();
         model.addAttribute("alunos", alunos);
-        return "aluno/list";
-    }
-
-    @GetMapping("/{id}")
-    public String getAlunoById(@PathVariable Long id, Model model) {
-        Optional<Aluno> aluno = alunoRepository.findById(id);
-        model.addAttribute("aluno", aluno.orElse(null));
-        return "aluno/view";
-    }
-
-    @GetMapping("/add")
-    public String addAlunoForm(Model model) {
         model.addAttribute("aluno", new Aluno());
-        return "aluno/add";
-    }
-
-    @PostMapping("/add")
-    public String addAluno(@ModelAttribute Aluno aluno) {
-        alunoRepository.save(aluno);
-        return "redirect:/aluno/list";
+        return "aluno/crud";
     }
 
     @GetMapping("/edit/{id}")
     public String editAlunoForm(@PathVariable Long id, Model model) {
         Optional<Aluno> aluno = alunoRepository.findById(id);
-        model.addAttribute("aluno", aluno.orElse(null));
-        return "aluno/edit";
+        model.addAttribute("aluno", aluno.orElse(new Aluno()));
+        model.addAttribute("alunos", alunoRepository.findAll());
+        return "aluno/crud";
+    }
+
+    @PostMapping("/add")
+    public String addAluno(@ModelAttribute Aluno aluno) {
+        alunoRepository.save(aluno);
+        return "redirect:/aluno/crud";
     }
 
     @PostMapping("/edit/{id}")
@@ -60,15 +49,13 @@ public class AlunoController {
         aluno.setNome(alunoDetails.getNome());
         aluno.setCpf(alunoDetails.getCpf());
         aluno.setSexo(alunoDetails.getSexo());
-        aluno.setCurso(alunoDetails.getCurso());
-        aluno.setDisciplinas(alunoDetails.getDisciplinas());
         alunoRepository.save(aluno);
-        return "redirect:/aluno/list";
+        return "redirect:/aluno/crud";
     }
 
     @GetMapping("/delete/{id}")
     public String deleteAluno(@PathVariable Long id) {
         alunoRepository.deleteById(id);
-        return "redirect:/aluno/list";
+        return "redirect:/aluno/crud";
     }
 }
