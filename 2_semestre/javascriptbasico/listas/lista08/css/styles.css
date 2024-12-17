@@ -59,6 +59,12 @@ input, select {
     border-radius: 5px;
 }
 
+.buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
 button {
     display: inline-block;
     justify-content: center;
@@ -71,6 +77,8 @@ button {
     cursor: pointer;
     transition: transform 0.2s;
 }
+
+
 
 button:hover {
     transform: scale(0.9);
