@@ -1,21 +1,21 @@
 const vehicles = {
     shopping: [
         {
-            image: 'civic.jpg',
+            image: 'img/civic.jpg',
             details: 'Fabricante: Honda, Nome: Civic, Potência: 150 cv, Garantia: 3 anos, Consumo: 9,7 km/l'
         },
         {
-            image: 'corolla.jpg',
+            image: 'img/corolla.jpg',
             details: 'Fabricante: Toyota, Nome: Corolla, Potência: 144 cv, Garantia: 3 anos, Consumo: 10,6 km/l'
         }
     ],
     nature: [
         {
-            image: 'troller.jpg',
+            image: 'img/troller.jpg',
             details: 'Fabricante: Ford, Nome: Troller, Potência: 200 cv, Garantia: 3 anos, Consumo: 7,7 km/l'
         },
         {
-            image: 'wrangler.jpg',
+            image: 'img/wrangler.jpg',
             details: 'Fabricante: Jeep, Nome: Wrangler, Potência: 199 cv, Garantia: 2 anos, Consumo: 3,1 km/l'
         }
     ]
@@ -43,6 +43,6 @@ function updateSlideshow() {
 
 updateSlideshow();
 
-document.getElementById('change-profile').addEventListener('click', () => {
+document.getElementById('mudarPerfil').addEventListener('click', () => {
     window.location.href = 'index.html';
 });

@@ -4,22 +4,49 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: top;
+    margin-top: 100px;
     height: 100vh;
     background-color: #f4f4f9;
 }
 
-div h1 {
+.form-container h1 {
     text-align: center;
     color: black;
     font: arial bold;
+    font-size: 57px;
     text-shadow: yellow 1.5px 1.5px;
+    margin-bottom: 50px;
 }
 
-p {
+.form-container p {
     margin: 0;
     color: red;
     text-align: left;
+    margin-bottom: 15px;
+}
+
+span {
+    color: red;
+}
+
+.alinhados {
+    display: flex;
+    justify-content: space-between;
+}
+
+.editLabel1 {
+    text-align: left;
+    width: 20%;
+}
+
+.editLabel2 {
+    text-align: left;
+    width: 67%;
+}
+
+select {
+    width: 100%;
 }
 
 .form-container label {
@@ -32,11 +59,11 @@ p {
     text-align: left;
     background: #fff;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.aguarde-container, .vehicle-container {
+.vehicle-container {
+    justify-content: space-between;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -56,7 +83,6 @@ input, select {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
 .buttons {
@@ -66,19 +92,18 @@ input, select {
 }
 
 button {
+    min-width: 200px;
     display: inline-block;
     justify-content: center;
     padding: 10px;
-    font-size: 16px;
-    background-color: #007BFF;
+    font-size: 13px;
+    background-color: black;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: transform 0.2s;
 }
-
-
 
 button:hover {
     transform: scale(0.9);
@@ -94,4 +119,22 @@ button:hover {
     margin: 10px 0;
     font-size: 14px;
     color: black;
+}
+
+.aguarde-container {
+    text-align: center;
+    color: black;
+    font: arial bold;
+    margin-bottom: 50px;
+}
+
+.imgVehicle {
+    text-align: center;
+    width: 50%;
+    border-radius: 20px;
+}
+
+.infoVehicle {
+    text-align: center;
+    width: 50%;
 }
