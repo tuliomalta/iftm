@@ -9,14 +9,22 @@
 </head>
 
 <body>
+
+    <h1 id="userMessage"></h1>
     <div class="vehicle-container">
-        <div class="imgVehicle">
-            <h1 id="user-message"></h1>
-        </div>
+
+        <img id="imgVehicle" src="img/civic.jpg">
 
         <div class="infoVehicle">
             <p>Características do veículo:</p>
-            <div id="slideshow" class="slideshow"></div>
+            <ul>
+                <li>Fabricante: <span id="fabricante"></span></li>
+                <li>Nome: <span id="nomeVeiculo"></span></li>
+                <li>Potência do motor: <span id="potencia"></span></li>
+                <li>Garantia: <span id="garantia"></span></li>
+                <li>Consumo (cidade): <span id="consumo"></span></li>
+            </ul>
+
             <button id="mudarPerfil">Mudar perfil</button>
         </div>
 
