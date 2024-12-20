@@ -12,8 +12,6 @@ public class ValidandoEmail {
         String emailRegex = "^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}$";
         Pattern pattern = Pattern.compile(emailRegex);
 
-        System.out.println("Digite o texto para verificar se é um e-mail válido:");
-
         String input = scanner.nextLine();
 
         Matcher matcher = pattern.matcher(input);

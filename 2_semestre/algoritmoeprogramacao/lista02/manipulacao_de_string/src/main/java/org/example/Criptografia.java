@@ -7,10 +7,8 @@ public class Criptografia {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
-        // Lê o número de linhas a serem processadas
         int n = Integer.parseInt(scanner.nextLine());
 
-        // Processa cada linha
         for (int i = 0; i < n; i++) {
             String input = scanner.nextLine();
             String etapa1 = deslocaTresPosicoes(input);
@@ -22,7 +20,6 @@ public class Criptografia {
         scanner.close();
     }
 
-    // Primeira passada: desloca caracteres alfabéticos 3 posições para a direita
     public static String deslocaTresPosicoes(String texto) {
         char[] chars = texto.toCharArray();
 
@@ -36,7 +33,6 @@ public class Criptografia {
         return String.valueOf(chars);
     }
 
-    // Segunda passada: inverte a linha
     public static String inverteLinha(String texto) {
         char[] chars = texto.toCharArray();
         int n = chars.length;
@@ -50,7 +46,6 @@ public class Criptografia {
         return String.valueOf(chars);
     }
 
-    // Terceira passada: desloca a segunda metade dos caracteres uma posição para a esquerda
     public static String deslocaMetadeParaEsquerda(String texto) {
         char[] chars = texto.toCharArray();
         int metade = chars.length / 2;

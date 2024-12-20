@@ -17,7 +17,7 @@ public class ValidarTelefoneBrasil {
                 System.out.println("Fixo");
             }
         } else {
-            System.out.println("Inválido");
+            System.out.println("inválido");
         }
 
         scanner.close();
