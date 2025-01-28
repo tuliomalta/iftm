@@ -1,0 +1,12 @@
+services:
+  dbaula2701:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: dbaula2701
+      MYSQL_USER: mtmalta
+      MYSQL_PASSWORD: marco991488128
+    ports:
+      - "3306:3306"
+    volumes:
+      - "./mysql:/var/lib/mysql"
