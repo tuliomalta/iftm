@@ -12,11 +12,11 @@ public class Lesson10 {
 
         while (true) {
             System.out.println("\nMenu:");
-            System.out.println("a) Adicionar um aluno.");
-            System.out.println("b) Adicionar uma nota a um aluno.");
-            System.out.println("c) Calcular a média das notas de todos os alunos.");
-            System.out.println("d) Imprimir os dados dos alunos.");
-            System.out.println("e) Sair.");
+            System.out.println("a - Adicionar um aluno.");
+            System.out.println("b - Adicionar uma nota a um aluno.");
+            System.out.println("c - Calcular a média das notas de todos os alunos.");
+            System.out.println("d - Imprimir os dados dos alunos.");
+            System.out.println("e - Sair.");
             System.out.print("Escolha uma opção: ");
             String opcao = scanner.nextLine();
 
