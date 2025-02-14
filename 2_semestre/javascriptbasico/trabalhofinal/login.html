@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - Jogo EhPar</title>
+  <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+  <div class="login-container">
+    <h1>Jogo EhPar</h1>
+    <form id="loginForm">
+      <label for="loginEmail">User</label>
+      <input type="email" id="loginEmail" placeholder="Digite seu e-mail" required>
+      <label for="loginPassword">Password</label>
+      <input type="password" id="loginPassword" placeholder="Digite sua senha" required>
+      <div class="button-group">
+        <button type="submit" id="btnLogin">Login</button>
+        <button type="button" id="btnClear">Clear</button>
+      </div>
+      <p class="error-message" id="loginError"></p>
+    </form>
+    <p class="register-link">Não tem conta? <a href="cadastro.html">Cadastrar-se</a></p>
+  </div>
+  <script src="js/login.js"></script>
+</body>
+</html>

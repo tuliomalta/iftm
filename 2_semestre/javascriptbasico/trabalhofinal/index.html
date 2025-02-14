@@ -1,11 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Index</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/cssPop.css" />
+  </head>
+  <body>
+    <header class="top-header">
+      <div class="difficulty-panel">
+        <h2>Nível</h2>
+        <select name="dificuldade" id="difficulty">
+          <option value="0">Selecione</option>
+          <option value="1">Fácil</option>
+          <option value="2">Médio</option>
+          <option value="3">Difícil</option>
+        </select>
+      </div>
+      <div class="timer-display">
+        <h2>Tempo :</h2>
+        <span class="timer-value">00:00</span>
+      </div>
+      <div class="control-buttons">
+        <input type="button" value="Iniciar" id="btnStart" />
+        <input type="button" value="Pausar" id="btnPause" />
+        <input type="button" value="Parar" id="btnStop" />
+      </div>
+    </header>
+    <main class="game-numbers">
+      <div class="main-number">-</div>
+    </main>
+    <footer class="footer-info">
+      <div>
+        <p>Acertos:</p>
+        <span id="hits">0 (0%)</span>
+      </div>
+      <div>
+        <p>Erros:</p>
+        <span id="mistakes">0</span>
+      </div>
+      <div>
+        <p>Números pares sorteados:</p>
+        <span id="evenNumbers">0</span>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/jsPop.js"></script>
+  </body>
 </html>
