@@ -2,6 +2,9 @@ document.getElementById("mostrarResultado").addEventListener("click", function()
     var texto = document.getElementById("textoInput").value;
     var letras = "abcdefghijklmnopqrstuvwxyz".split('');
     var palavras = texto.trim().split(/\s+/);
+    palavras = palavras.map(function(palavra) {
+        return palavra.replace(/[.,!?;:(){}[\]"']/g, "");  // Remove pontuação
+    });
     
     var palavrasPorLetra = {};
 

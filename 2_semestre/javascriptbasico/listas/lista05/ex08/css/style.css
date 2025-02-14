@@ -9,9 +9,10 @@ body {
     background-color: #f4f4f4;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    min-height: 100vh;
     margin: 0;
+    overflow-y: auto; /* Habilita a rolagem vertical se necessário */
 }
 
 .container {
