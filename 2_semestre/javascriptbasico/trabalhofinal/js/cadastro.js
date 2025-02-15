@@ -42,6 +42,10 @@ document.addEventListener("DOMContentLoaded", () => {
         cadastroError.textContent = "Preencha todos os campos.";
         return;
       }
+      if (!/^\d{1,11}$/.test(cpf)) {
+        cadastroError.textContent = "CPF deve conter apenas números (máximo 11 dígitos).";
+        return;
+      }
       if (!/^\d{1,11}$/.test(celular)) {
         cadastroError.textContent = "Celular deve conter apenas números (máximo 11 dígitos).";
         return;
