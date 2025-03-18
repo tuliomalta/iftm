@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masculino</title>
+    <link rel="stylesheet" href="css/styleMasculino.css">
+</head>
+<body>
+    <img id="personagem" src="Imagens/mario.gif" alt="Mário" onclick="incrementarContador('mario')">
+    <br><br>
+    <button onclick="trocarPersonagem('luigi'); incrementarContador('luigi')">Luigi</button>
+    <button onclick="trocarPersonagem('mario'); incrementarContador('mario')">Mário</button>
+
+    <p>Contador do Mário: <span id="contadorMario">0</span></p>
+    <p>Contador do Luigi: <span id="contadorLuigi">0</span></p>
+
+    <script src="js/scriptMasculino.js"></script>
+</body>
+</html>
