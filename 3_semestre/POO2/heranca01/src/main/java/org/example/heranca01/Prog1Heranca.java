@@ -14,7 +14,7 @@ public class Prog1Heranca {
         System.out.println("Matrícula: " + al.getMatricula());
 
         System.out.println("RESULTADO\n\nNome: " + p.getNome());
-        System.out.println("CPF: " + p.cpf);
+        System.out.println("CPF: " + p.getCpf());
         System.out.println("Data de nascimento: " + p.anoNascimento);
 
     }
