@@ -13,7 +13,9 @@ public class ContaBancaria {
     public void depositar(double valor) {}
 
     public boolean sacar(double valor) {
-        return false;
+        if (this.saldo >= valor) {
+
+        }
     }
 
     public String exibeSaldo() {
