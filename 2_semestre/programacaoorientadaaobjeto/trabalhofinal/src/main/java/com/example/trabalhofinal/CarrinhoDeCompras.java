@@ -33,4 +33,16 @@ class CarrinhoDeCompras {
         }
         System.out.println("Compra finalizada! Total: R$" + calcularTotal());
     }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public List<Produto> getProdutos() {
+        return produtos;
+    }
+
+    public List<Integer> getQuantidades() {
+        return quantidades;
+    }
 }
