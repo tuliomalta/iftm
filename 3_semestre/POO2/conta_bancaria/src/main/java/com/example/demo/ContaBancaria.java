@@ -1,24 +1,28 @@
 package com.example.demo;
 
 public class ContaBancaria {
-
-    private String titular;
-    private double saldo;
+    protected String titular;
+    protected double saldo;
 
     public ContaBancaria(String titular, double saldo) {
         this.titular = titular;
         this.saldo = saldo;
     }
 
-    public void depositar(double valor) {}
+    public void depositar(double valor) {
+        saldo += valor;
+    }
 
     public boolean sacar(double valor) {
-        if (this.saldo >= valor) {
-
+        if (saldo >= valor) {
+            saldo -= valor;
+            return true;
         }
+        return false;
     }
 
     public String exibeSaldo() {
-        return "";
+        return String.format("Saldo da conta de %s: R$ %.2f", titular, saldo);
     }
 }
+
