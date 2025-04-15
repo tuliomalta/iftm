@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>avaliacao_calculadora</artifactId>
+    <artifactId>atividade_polimorfismo</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>avaliacao_calculadora</name>
-    <description>avaliacao_calculadora</description>
+    <name>atividade_polimorfismo</name>
+    <description>atividade_polimorfismo</description>
     <url/>
     <licenses>
         <license/>
@@ -78,25 +78,6 @@
                         </exclude>
                     </excludes>
                 </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>0.8.12</version>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>test</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
