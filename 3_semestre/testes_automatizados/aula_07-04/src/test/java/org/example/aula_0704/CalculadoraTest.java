@@ -3,6 +3,9 @@ package org.example.aula_0704;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 class CalculadoraTest {
 
@@ -29,7 +32,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.somar(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -55,7 +58,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.somar(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -81,7 +84,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.subtrair(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -107,7 +110,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.subtrair(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -133,7 +136,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.multiplicar(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -159,7 +162,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.multiplicar(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -185,7 +188,7 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.dividir(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
     }
 
     /**
@@ -211,6 +214,22 @@ class CalculadoraTest {
         int resultadoObtido = calculadora.dividir(primeiroNumero, segundoNumero);
 
         //assert
-        Assertions.assertEquals(resultadoEsperado, resultadoObtido);
+        assertEquals(resultadoEsperado, resultadoObtido);
+    }
+
+    @Test
+    public void testarDividirPorZeroGeraErro() {
+        // arrange
+        int primeiroNumero = 5;
+        int segundoNumero = 0;
+        String mensagemEsperada = "Divisão por zero!!!";
+
+        // act e assign
+        DividirPorZeroException resultadoObtido = assertThrows(DividirPorZeroException.class,
+                () -> {
+                    calculadora.dividir(primeiroNumero, segundoNumero);
+                });
+
+        assertEquals(mensagemEsperada, resultadoObtido.getMessage());
     }
 }
