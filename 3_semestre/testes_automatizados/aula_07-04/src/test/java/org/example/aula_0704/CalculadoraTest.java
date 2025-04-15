@@ -1,13 +1,46 @@
 package org.example.aula_0704;
 
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 class CalculadoraTest {
+
+    private static Calculadora calculadora;
+
+    /**
+     * Configurar a execução do teste uma única vez
+     */
+    @BeforeAll
+    public static void configurarTestesGeral() {
+        System.out.println("Iniciar Teste");
+        calculadora = new Calculadora();
+    }
+
+    @AfterAll
+    public static void finalizarTestesGeral() {
+        System.out.println("Fim do Teste");
+    }
+
+    /**
+     * Configurar cada execução de teste.
+     * Executa ao inicio de cada método de teste com notação @Test
+     */
+    @BeforeEach
+    public void configurarTestes() {
+        System.out.println("Começou");
+    }
+
+    /**
+     * Finalizar a execução de cada teste.
+     * Executa ao fim da execução de cada método de teste com notação @Test
+     */
+    @AfterEach
+    public void finalizarTeste() {
+        System.out.println("Fechou!!!!!!!!!!!!!!!!");
+    }
 
     /**
      * Teste para verificar se a soma de dois números inteiros positivos está correta.
@@ -175,7 +208,7 @@ class CalculadoraTest {
      */
 
     @Test
-    void dividirDoisInteirosPositivos() {
+    void dividirDoisInteirosPositivos() throws Exception {
 
         //arrange
         Calculadora calculadora = new Calculadora();

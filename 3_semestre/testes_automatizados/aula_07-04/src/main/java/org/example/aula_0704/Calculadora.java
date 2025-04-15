@@ -14,9 +14,9 @@ public class Calculadora {
         return num1 * num2;
     }
 
-    public int dividir(int num1, int num2) {
+    public int dividir(int num1, int num2) throws Exception {
         if (num2 == 0) {
-            throw new ArithmeticException("Divisão por zero não é permitida.");
+            throw new DividirPorZeroException();
         }
         return num1 / num2;
     }
