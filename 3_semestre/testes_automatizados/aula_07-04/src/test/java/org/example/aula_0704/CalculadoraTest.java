@@ -234,7 +234,7 @@ class CalculadoraTest {
      */
 
     @Test
-    void dividirDoisInteirosPositivosComResto() {
+    void dividirDoisInteirosPositivosComResto() throws Exception {
 
         //arrange
         Calculadora calculadora = new Calculadora();
