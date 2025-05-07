@@ -6,7 +6,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FuncionarioTerceirizadoTest {
 
-    // 1) Despesa adicional
     @Test
     void despesaAdicionalAcimaDoMaximoDeveDarErro() {
         IllegalArgumentException ex = assertThrows(
@@ -31,7 +30,6 @@ class FuncionarioTerceirizadoTest {
         assertEquals(500, ft.getDespesaAdicional());
     }
 
-    // 2) Herda todas as validações de Funcionario para horas e valorHora
     @Test
     void horasInvalidasNoTerceirizadoDeveDarErro() {
         assertThrows(IllegalArgumentException.class,
@@ -46,7 +44,6 @@ class FuncionarioTerceirizadoTest {
         );
     }
 
-    // 3) Cálculo de pagamento com bônus de 110%
     @Test
     void calcularPagamentoTerceirizadoValido() {
         // 20*80 =1600 + 100*1.1 =110  → 1710

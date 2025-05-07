@@ -5,7 +5,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class FuncionarioTest {
 
-    // 1) Cenários do construtor / setters para nome
     @Test
     void construtorNomeVazioDeveDarErro() {
         IllegalArgumentException ex = assertThrows(
@@ -30,7 +29,6 @@ class FuncionarioTest {
         assertEquals("Ana", f.getNome());
     }
 
-    // 2) Horas trabalhadas
     @Test
     void horasAbaixoDoMinimoDeveDarErro() {
         IllegalArgumentException ex = assertThrows(
@@ -55,7 +53,6 @@ class FuncionarioTest {
         assertEquals(30, f.getHorasTrabalhadas());
     }
 
-    // 3) Valor por hora
     @Test
     void valorHoraAbaixoDoMinimoDeveDarErro() {
         double abaixo = Funcionario.VALOR_HORA_MIN - 1;
@@ -101,7 +98,7 @@ class FuncionarioTest {
     }
 
     @Test
-    void calcularPagamentoAcimaDoTetoDeveErro() {
+    void calcularPagamentoAcimaDoTetoDeveErro() throws NoSuchFieldException, IllegalAccessException {
         // Simula um cenário (mesmo que não ocorra em produção)
         Funcionario f = new Funcionario("Pedro", 40, Funcionario.VALOR_HORA_MAX);
         // via reflexão forçamos valorHora pra testar teto
