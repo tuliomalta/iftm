@@ -1,4 +1,4 @@
-package ocp.principle.solucao;
+package src.ocp.principle.solucao;
 
 public class OcpPrinciple {
 

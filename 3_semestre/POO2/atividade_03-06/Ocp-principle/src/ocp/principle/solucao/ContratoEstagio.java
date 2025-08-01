@@ -1,13 +1,22 @@
 package ocp.principle.solucao;
 
-public class ContratoEstagio implements Remuneravel {
-    private double bolsa;
+public class ContratoEstagio  implements Remuneravel{
+    private double bolsaAuxilio;
 
-    // construtor
-    
+    public ContratoEstagio(double bolsaAuxilio) {
+        this.bolsaAuxilio = bolsaAuxilio;
+    }
+
+    public double getBolsaAuxilio() {
+        return bolsaAuxilio;
+    }
+
+    public void setBolsaAuxilio(double bolsaAuxilio) {
+        this.bolsaAuxilio = bolsaAuxilio;
+    }
+
     @Override
     public double remuneracao() {
-         return bolsa;  }
-    
+        return bolsaAuxilio;
+    }
 }
-
